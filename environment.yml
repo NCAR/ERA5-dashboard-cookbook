@@ -5,3 +5,19 @@ dependencies:
   - jupyter-book
   - jupyterlab
   - sphinx-pythia-theme
+  - aiohttp
+  - cartopy 
+  - dask=2024.1.1
+  - dask-gateway=2024.1.0
+  - geoviews
+  - holoviews
+  - intake
+  - intake-esm
+  - intake-thredds
+  - ipykernel
+  - matplotlib
+  - numpy=1.24.4
+  - pandas=2.0.3
+  - python=3.10.12
+  - tornado=6.4
+  - xarray=2023.6.0
