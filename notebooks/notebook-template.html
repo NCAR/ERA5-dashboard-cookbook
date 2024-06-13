@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Pythia Notebook Template &#8212; Project Pythia Cookbook Template</title>
+    <title>ERA5 Dashboard &#8212; Project Pythia Cookbook Template</title>
   
   
   
@@ -47,7 +47,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -80,7 +80,7 @@
     <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="12 June 2024"/>
+    <meta name="docbuild:last-update" content="13 June 2024"/>
   </head>
   
   
@@ -369,7 +369,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Pythia Notebook Template</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ERA5 Dashboard</a></li>
 </ul>
 
     </div>
@@ -405,19 +405,18 @@
 </div></blockquote>
 <p>or edit this cell to see raw HTML <code class="docutils literal notranslate"><span class="pre">img</span></code> demonstration. This is preferred if you need to shrink your embedded image. <strong>Either way be sure to include <code class="docutils literal notranslate"><span class="pre">alt</span></code> text for any embedded images to make your content more accessible.</strong></p>
 <p><a class="reference internal" href="../_images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="../_images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
-<section class="tex2jax_ignore mathjax_ignore" id="project-pythia-notebook-template">
-<h1>Project Pythia Notebook Template<a class="headerlink" href="#project-pythia-notebook-template" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<p>Next, title your notebook appropriately with a top-level Markdown header, <code class="docutils literal notranslate"><span class="pre">#</span></code>. Do not use this level header anywhere else in the notebook. Our book build process will use this title in the navbar, table of contents, etc. Keep it short, keep it descriptive. Follow this with a <code class="docutils literal notranslate"><span class="pre">---</span></code> cell to visually distinguish the transition to the prerequisites section.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="era5-dashboard">
+<h1>ERA5 Dashboard<a class="headerlink" href="#era5-dashboard" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>If you have an introductory paragraph, lead with it here! Keep it short and tied to your material, then be sure to continue into the required list of topics below,</p>
+<p>Interactive data visualizations are an avenue to increase engagement, improve understanding, and provide deeper insight to large and complex sets of data. In this cookbook you will create an interactive ERA-5 data visualization notebook and learn how to transform the notebook in to a portable web server.</p>
 <ol class="arabic simple">
-<li><p>This is a numbered list of the specific topics</p></li>
-<li><p>These should map approximately to your main sections of content</p></li>
-<li><p>Or each second-level, <code class="docutils literal notranslate"><span class="pre">##</span></code>, header in your notebook</p></li>
-<li><p>Keep the size and scope of your notebook in check</p></li>
-<li><p>And be sure to let the reader know up front the important concepts they’ll be leaving with</p></li>
+<li><p>Preprocessing data</p></li>
+<li><p>Ingesting data</p></li>
+<li><p>Creating interactive plots</p></li>
+<li><p>Transforming the notebook to a Python script that can launch a web server</p></li>
+<li><p>Running the web server</p></li>
 </ol>
 </section>
 <section id="prerequisites">
@@ -528,8 +527,8 @@
 <section id="header-levels">
 <h6>header levels<a class="headerlink" href="#header-levels" title="Link to this heading"><i class="fas fa-link"></i></a></h6>
 <p>as well <span class="math notranslate nohighlight">\(m = a * t / h\)</span> text! Similarly, you have access to other <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html"><strong>functionality</strong></a> via MathJax (demo below from link),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3f849aa-f308-4538-a6d5-dd01c5379d7d">
-<span class="eqno">(1)<a class="headerlink" href="#equation-e3f849aa-f308-4538-a6d5-dd01c5379d7d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9d9b814b-3f57-4738-adb4-2507de8d4f5b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9d9b814b-3f57-4738-adb4-2507de8d4f5b" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
 \dot{x} &amp; = \sigma(y-x) \\
 \dot{y} &amp; = \rho x - y - xz \\
 \dot{z} &amp; = -\beta z + xy
@@ -682,9 +681,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -709,14 +708,14 @@
       
       <li><a href="https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?urlpath=lab/tree/notebooks/notebook-template.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -873,9 +872,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -910,7 +909,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12 June 2024.
+  Last updated on 13 June 2024.
   <br/>
 </p>
   </div>
@@ -964,7 +963,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 12 June 2024.
+          Last updated on 13 June 2024.
         </p>
       </div>
     </div>
