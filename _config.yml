@@ -11,6 +11,8 @@ execute:
   execute_notebooks: cache
   exclude_patterns:
     - '*colorado_era5*'
+    - '*hack*'
+    - '*data_preprocessing*'
   timeout: 600
   allow_errors: False # cells with expected failures must set the `raises-exception` cell tag
 
