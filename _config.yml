@@ -10,7 +10,7 @@ execute:
   # To execute notebooks via a Binder instead, replace 'cache' with 'binder'
   execute_notebooks: cache
   exclude_patterns:
-    - '*colorado_era5*'
+    - '*era5_anomaly*'
     - '*hack*'
     - '*data_preprocessing*'
   timeout: 600
